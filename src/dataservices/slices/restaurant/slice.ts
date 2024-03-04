@@ -27,6 +27,6 @@ export const restaurantFilterSlice = createSlice({
   }
 })
 
-export const { } = restaurantFilterSlice.actions
+export const { revIsOpen, setPrice, setCategory } = restaurantFilterSlice.actions
 
 export default restaurantFilterSlice.reducer
