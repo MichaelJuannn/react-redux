@@ -1,11 +1,13 @@
+import { Provider } from 'react-redux'
 import './App.css'
-import { Filter } from './components/Filter'
-import { Header } from './components/Header'
+import Scene from './viewport/Scene'
+import store from './init/store/store'
 function App() {
   return (
     <>
-      <Header />
-      <Filter />
+      <Provider store={store}>
+        <Scene />
+      </Provider>
     </>
   )
 }
