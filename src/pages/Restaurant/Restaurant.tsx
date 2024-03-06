@@ -12,8 +12,8 @@ const star = new Map([
 
 export default function RestaurantDetails() {
   const { id } = useParams();
-  if (!id) return <div className="text-xl text-red-400">some kind of error just happened</div>
-  const { data } = useGetRestaurantDetailsQuery(id)
+  const { data, error } = useGetRestaurantDetailsQuery(id as string)
+  if (error) return <div className="text-xl text-red-400">some kind of error just happened</div>
   const restaurant = data?.restaurant
   if (!restaurant) return <div className="text-xl text-red-400">some kind of error just happened</div>
 

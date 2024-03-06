@@ -10,10 +10,12 @@ export function Home() {
   const { data: searchRestaurantsData } = useSearchRestaurantQuery(filter.category)
 
   const data = filter.category ? searchRestaurantsData : allRestaurantsData
+  console.log(filter.priceLimit);
+
 
   const restaurantCard = data?.restaurants
     .filter((restaurant) => filter.isOpen == false || restaurant.isOpen == true)
-    .filter((restaurant) => restaurant.price <= filter.priceLimit || filter.priceLimit === 0 || isNaN(filter.priceLimit))
+    .filter((restaurant) => filter.priceLimit === 0 || restaurant.price <= filter.priceLimit)
     .map((restaurant) => <Card key={restaurant.id} restaurant={restaurant} />)
 
   return (

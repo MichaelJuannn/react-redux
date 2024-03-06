@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { IRootState } from "../init/store/store";
-import { revIsOpen, setCategory } from "../dataservices/slices/restaurant/slice";
+import { revIsOpen, setCategory, setPrice } from "../dataservices/slices/restaurant/slice";
 export function Filter() {
   const dispatch = useDispatch()
   const restaurantsFilter = useSelector((state: IRootState) => state.restaurant)
@@ -14,11 +14,12 @@ export function Filter() {
           <input type="checkbox" name="isOpen" id="isOpen" checked={restaurantsFilter.isOpen} onChange={() => dispatch(revIsOpen())} />
           <label htmlFor="isOpen"> Open Now</label>
         </div>
-        <div><input type="number" name="price" id="price" placeholder="Price" className="appearance-none p-1 border" /></div>
         <div>
-          <input type="text" name="category" value={restaurantsFilter.category} id="category" placeholder="Category"
-            className="appearance-none p-1 border"
-            onChange={(e) => dispatch(setCategory(e.currentTarget.value))} /></div>
+          <input type="number" name="price" id="price" placeholder="Price" className="appearance-none p-1 border" value={restaurantsFilter.priceLimit} onChange={(e) => dispatch(setPrice(e.currentTarget.value))} />
+        </div>
+        <div>
+          <input type="text" name="category" value={restaurantsFilter.category} id="category" placeholder="Category" className="appearance-none p-1 border" onChange={(e) => dispatch(setCategory(e.currentTarget.value))} />
+        </div>
       </div>
     </>
   )
