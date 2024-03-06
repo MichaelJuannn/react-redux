@@ -1,9 +1,9 @@
 import { Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import { Header } from "../components/Header";
-import { Filter } from "../components/Filter";
-import { Home } from "../pages/Home/Home";
-import RestaurantDetails from "../pages/Restaurant/Restaurant";
+import { Header } from "../../components/Header";
+import { Filter } from "../../components/Filter";
+import { Home } from "../../pages/Home/Home";
+import RestaurantDetails from "../../pages/Restaurant/Restaurant";
 
 export default function Scene() {
   return (

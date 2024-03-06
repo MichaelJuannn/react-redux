@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { IRootState } from "../init/store/store";
-import { revIsOpen, setCategory, setPrice } from "../dataservices/slices/restaurant/slice";
+import { revIsOpen, setCategory, setPrice } from "../dataservices/slices/restaurantSlice";
 export function Filter() {
   const dispatch = useDispatch()
   const restaurantsFilter = useSelector((state: IRootState) => state.restaurant)

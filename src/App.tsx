@@ -1,13 +1,12 @@
-import { Provider } from 'react-redux'
 import './App.css'
-import Scene from './viewport/Scene'
-import store from './init/store/store'
+import Scene from './viewport/Scene/Scene'
+import HasReduxStore from './viewport/HasReduxStore/HasReduxStore'
 function App() {
   return (
     <>
-      <Provider store={store}>
+      <HasReduxStore>
         <Scene />
-      </Provider>
+      </HasReduxStore>
     </>
   )
 }

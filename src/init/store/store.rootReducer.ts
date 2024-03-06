@@ -1,5 +1,5 @@
 import { combineReducers } from "@reduxjs/toolkit";
-import restaurantReducer from "../../dataservices/slices/restaurant/slice";
+import restaurantReducer from "../../dataservices/slices/restaurantSlice";
 import { restaurantApi } from "../../dataservices/api/restaurantApi";
 
 const rootReducer = combineReducers({
