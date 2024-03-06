@@ -10,7 +10,6 @@ export function Home() {
   const { data: searchRestaurantsData } = useSearchRestaurantQuery(filter.category)
 
   const data = filter.category ? searchRestaurantsData : allRestaurantsData
-  console.log(filter.priceLimit);
 
 
   const restaurantCard = data?.restaurants
