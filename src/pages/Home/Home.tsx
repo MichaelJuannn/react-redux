@@ -1,10 +1,8 @@
-import { useSelector } from "react-redux";
-import { IRootState } from "../../init/store/store";
 import { useGetAllRestaurantsQuery, useSearchRestaurantQuery } from "../../dataservices/api/restaurantApi";
 import Card from "../../components/Card";
-
+import { useAppSelector } from "../../hooks/reduxSelector"
 export function Home() {
-  const filter = useSelector((state: IRootState) => state.restaurant)
+  const filter = useAppSelector((state) => state.restaurant)
 
   const { data: allRestaurantsData } = useGetAllRestaurantsQuery()
   const { data: searchRestaurantsData } = useSearchRestaurantQuery(filter.category)
@@ -21,3 +19,4 @@ export function Home() {
     </div>
   )
 }
+

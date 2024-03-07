@@ -1,10 +1,9 @@
-import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { IRootState } from "../init/store/store";
 import { revIsOpen, setCategory, setPrice } from "../dataservices/slices/restaurantSlice";
+import { useAppSelector } from "../hooks/reduxSelector";
 export function Filter() {
   const dispatch = useDispatch()
-  const restaurantsFilter = useSelector((state: IRootState) => state.restaurant)
+  const restaurantsFilter = useAppSelector((state) => state.restaurant)
 
   return (
     <>
