@@ -8,9 +8,7 @@ export function Home() {
 
   const { data: allRestaurantsData } = useGetAllRestaurantsQuery()
   const { data: searchRestaurantsData } = useSearchRestaurantQuery(filter.category)
-
   const data = filter.category ? searchRestaurantsData : allRestaurantsData
-
 
   const restaurantCard = data?.restaurants
     .filter((restaurant) => filter.isOpen == false || restaurant.isOpen == true)
