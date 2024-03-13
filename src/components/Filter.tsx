@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { revIsOpen, setCategory, setPrice } from "../dataservices/slices/restaurantSlice";
+import { changeIsOpen, setCategory, setPrice } from "../dataservices/slices/restaurantSlice";
 import { useAppSelector } from "../hooks/reduxSelector";
 export function Filter() {
   const dispatch = useDispatch()
@@ -10,7 +10,7 @@ export function Filter() {
       <div className="flex p-4 border-t border-b gap-x-4 items-center">
         <div>Filter By</div>
         <div className="border p-1 rounded shadow-lg">
-          <input type="checkbox" name="isOpen" id="isOpen" checked={restaurantsFilter.isOpen} onChange={() => dispatch(revIsOpen())} />
+          <input type="checkbox" name="isOpen" id="isOpen" checked={restaurantsFilter.isOpen} onChange={() => dispatch(changeIsOpen())} />
           <label htmlFor="isOpen"> Open Now</label>
         </div>
         <div>

@@ -15,7 +15,7 @@ export const restaurantFilterSlice = createSlice({
   name: 'restaurant',
   initialState,
   reducers: {
-    revIsOpen: (state) => {
+    changeIsOpen: (state) => {
       state.isOpen = !state.isOpen
     },
     setPrice: (state, action) => {
@@ -27,6 +27,6 @@ export const restaurantFilterSlice = createSlice({
   }
 })
 
-export const { revIsOpen, setPrice, setCategory } = restaurantFilterSlice.actions
+export const { changeIsOpen, setPrice, setCategory } = restaurantFilterSlice.actions
 
 export default restaurantFilterSlice.reducer

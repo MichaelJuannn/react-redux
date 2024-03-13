@@ -2,8 +2,8 @@ import { Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { Header } from "../../components/Header";
 import { Filter } from "../../components/Filter";
-import { Home } from "../../pages/Home/Home";
-import RestaurantDetails from "../../pages/Restaurant/Restaurant";
+import Home from "../../pages/Home";
+import Restaurant from "../../pages/Restaurant";
 
 export default function Scene() {
   return (
@@ -16,7 +16,7 @@ export default function Scene() {
             element={<Home />}
           />
           <Route path="/:id"
-            element={<RestaurantDetails />}
+            element={<Restaurant />}
           />
         </Routes>
       </BrowserRouter>
